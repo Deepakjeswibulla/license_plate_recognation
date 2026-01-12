@@ -1,1 +1,200 @@
-read
+# 🚘 Automatic License Plate Recognition (ALPR) System
+
+**Real-Time & Uploaded Video Based | Computer Vision + Full Stack**
+
+---
+
+## 📌 Project Overview
+
+This project implements an **end-to-end Automatic License Plate Recognition (ALPR) system** capable of detecting vehicles and recognizing license plates from **real-time camera feeds** as well as **uploaded images/videos**.
+
+The system integrates **deep learning–based object detection**, **OCR**, and a **web-based interface** to deliver a practical, scalable, and production-oriented ALPR solution.
+
+---
+
+## ✨ Key Features
+
+* 🚗 **Vehicle Detection** using YOLOv8 (pretrained on COCO)
+* 🔢 **Custom-Trained License Plate Detection Model**
+* 🔠 **Optical Character Recognition (OCR)** with confidence filtering
+* 🎥 **Real-Time Webcam Processing**
+* 📤 **Uploaded Video/Image Processing**
+* 🌐 **Interactive Web UI** (Flask + Bootstrap)
+* 📊 **Overlay Visualization** (bounding boxes + plate text)
+* 🔁 **Temporal OCR Stabilization** (optional enhancement)
+
+---
+
+## 🧠 System Architecture
+
+```
+Frontend (Web UI)
+   │
+   ├── Live Camera Stream
+   ├── Video/Image Upload
+   │
+Backend (Flask)
+   │
+   ├── Frame Capture (OpenCV)
+   ├── Vehicle Detection (YOLOv8)
+   ├── License Plate Detection (YOLOv8 – Custom)
+   ├── OCR (EasyOCR)
+   ├── Confidence Filtering
+   │
+Output
+   ├── Annotated Video Frames
+   ├── Recognized License Plate Text
+```
+
+---
+
+## 🛠️ Tech Stack
+
+### Backend
+
+* **Python 3.8+**
+* **Flask**
+* **OpenCV**
+* **Ultralytics YOLOv8**
+* **EasyOCR**
+* **NumPy / Pandas**
+
+### Frontend
+
+* **HTML5**
+* **CSS3**
+* **Bootstrap 5**
+* **JavaScript**
+
+---
+
+## 📂 Project Structure
+
+```
+alpr_system/
+│
+├── app.py
+├── requirements.txt
+├── README.md
+│
+├── models/
+│   ├── yolov8_vehicle.pt
+│   └── license_plate.pt
+│
+├── core/
+│   ├── vehicle_detector.py
+│   ├── plate_detector.py
+│   ├── ocr_engine.py
+│
+├── templates/
+│   └── index.html
+│
+├── static/
+│   ├── css/
+│   └── js/
+│
+├── uploads/
+└── outputs/
+```
+
+---
+
+## 📦 Installation & Setup
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/your-username/alpr-system.git
+cd alpr-system
+```
+
+### 2️⃣ Create Virtual Environment (Recommended)
+
+```bash
+python -m venv alpr_env
+source alpr_env/bin/activate   # Linux / Mac
+alpr_env\Scripts\activate      # Windows
+```
+
+### 3️⃣ Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## ▶️ Running the Application
+
+### Start the Flask Server
+
+```bash
+python app.py
+```
+
+### Open in Browser
+
+```
+http://127.0.0.1:5000/
+```
+
+---
+
+## 🧪 Model Details
+
+### Vehicle Detection
+
+* **Model:** YOLOv8 (COCO pretrained)
+* **Classes:** Car, Bus, Truck, Motorcycle
+
+### License Plate Detection
+
+* **Model:** YOLOv8 (Custom-trained)
+* **Dataset:** UFPR-ALPR / OpenALPR (YOLO format)
+* **Training:** Transfer learning from YOLOv8n
+
+### OCR
+
+* **Engine:** EasyOCR
+* **Filtering:** Confidence thresholding (> 0.6)
+
+---
+
+## 🏋️ Training the License Plate Detection Model
+
+```bash
+python train_plate_model.py
+```
+
+Outputs:
+
+```
+runs/detect/alpr_plate_model/weights/best.pt
+```
+
+Rename:
+
+```
+best.pt → license_plate.pt
+```
+
+---
+
+## 📈 Performance & Optimization
+
+* Real-time inference with optimized YOLOv8n
+* Frame-by-frame OCR stabilization
+* Confidence-based detection filtering
+* Modular pipeline for scalability
+
+---
+
+## 🚀 Future Enhancements
+
+* 🔁 DeepSORT-based vehicle tracking
+* 📊 Analytics dashboard (SQLite + charts)
+* 🌍 Country-specific plate format validation
+* ☁️ Cloud deployment (AWS / Render)
+* 📱 Mobile-friendly UI
+
+---
