@@ -1,8 +1,3 @@
-Perfect 👍
-Here is the **final, clean, ready-to-paste `README.md`** for your current repo **exactly matching your folder and functionality**.
-
----
-
 # 🚗 License Plate Detection & Recognition (Web App)
 
 A **real-time License Plate Detection and Recognition system** built using **Streamlit**, **YOLO**, and **OCR**.
@@ -145,12 +140,3 @@ GitHub: [https://github.com/Deepakjeswibulla](https://github.com/Deepakjeswibull
 This project is intended for **educational and research purposes only**.
 
 ---
-
-If you want next:
-
-* Improve OCR accuracy further
-* Add confidence tuning
-* Deploy online
-* Add demo images to README
-
-Just tell me 👍
